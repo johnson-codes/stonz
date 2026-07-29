@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stonz — Kids Outdoor Gear</title>
+  <meta name="description" content="Stonz — kids footwear, apparel, and accessories that make getting outside easy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --mute: #5a5a5a;
+      --line: #e6e6e6;
+      --bg: #ffffff;
+      --accent: #1f6b57;
+      --wide: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-header-inner,
+    .hero,
+    .site-footer-inner {
+      width: min(var(--wide), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .site-header-inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav a:hover,
+    .nav a[aria-current="page"] {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 4rem 0 5rem;
+      max-width: 640px;
+    }
+
+    h1 {
+      font-size: clamp(1.85rem, 4vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero p {
+      color: var(--mute);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #185544;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--ink);
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 1.25rem 0;
+    }
+
+    .site-footer-inner {
+      font-size: 0.875rem;
+      color: var(--mute);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="logo" href="index.html">Stonz</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="https://stonz.com/" target="_blank" rel="noopener noreferrer">Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <h1>Making outside easy for kids and parents.</h1>
+    <p>Footwear, apparel, and accessories designed for how kids move — since 2004.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://stonz.com/" target="_blank" rel="noopener noreferrer">Shop Stonz</a>
+      <a class="btn btn-secondary" href="about.html">Our founder’s story</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>© <span id="year"></span> Stonz · Vancouver, Canada</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = String(new Date().getFullYear());
+  </script>
+</body>
+</html>
