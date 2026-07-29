@@ -55,10 +55,17 @@
     }
 
     .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 0.65rem;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .logo img {
+      width: auto;
+      height: 36px;
+      object-fit: contain;
     }
 
     .nav {
@@ -142,7 +149,9 @@
 <body>
   <header class="site-header">
     <div class="site-header-inner">
-      <a class="logo" href="index.html">Stonz</a>
+      <a class="logo" href="index.html" aria-label="Stonz home">
+        <img src="images/stonz-logo.png" alt="Stonz" width="160" height="48" />
+      </a>
       <nav class="nav" aria-label="Primary">
         <a href="index.html" aria-current="page">Home</a>
         <a href="about.html">About</a>
