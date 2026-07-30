@@ -322,7 +322,7 @@
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: clamp(2rem, 5vw, 4.5rem);
-      align-items: start;
+      align-items: stretch;
     }
 
     .intro-left,
@@ -331,12 +331,52 @@
     }
 
     .intro-left {
-      background: var(--soft);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: 360px;
       padding: clamp(1.75rem, 4vw, 2.5rem);
-      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #fff;
+      background: #1a1a1a;
     }
 
-    .intro-grid h2 { max-width: 10ch; margin-bottom: 0; }
+    .intro-left::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: url("images/about-intro-bg.png") center/cover no-repeat;
+      filter: grayscale(1) contrast(1.05);
+      pointer-events: none;
+    }
+
+    .intro-left::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(11, 11, 11, 0.18) 0%, rgba(11, 11, 11, 0.5) 48%, rgba(11, 11, 11, 0.84) 100%);
+      pointer-events: none;
+    }
+
+    .intro-left .eyebrow,
+    .intro-left h2 {
+      position: relative;
+      z-index: 2;
+    }
+
+    .intro-left .eyebrow {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .intro-grid h2 {
+      max-width: 10ch;
+      margin-bottom: 0;
+      color: #fff;
+    }
 
     .intro-right {
       padding: clamp(0.5rem, 2vw, 1rem) 0;
