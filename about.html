@@ -410,8 +410,9 @@
     }
 
     .timeline-section .section-head h2 {
-      max-width: 14ch;
+      max-width: none;
       margin-bottom: 0;
+      white-space: nowrap;
     }
 
     .timeline-controls {
@@ -910,6 +911,11 @@
       .story-images { grid-template-columns: 1fr; }
 
       .brand { font-size: clamp(3.2rem, 18vw, 4.5rem); }
+
+      .timeline-section .section-head h2 {
+        white-space: normal;
+        font-size: clamp(1.7rem, 8vw, 2.4rem);
+      }
 
       .hero {
         width: calc(100% - 1.5rem);
